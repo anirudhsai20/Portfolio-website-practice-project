@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap'); /*To import a particular font*/
+
+
+*{
+    margin:0;
+    padding:0;
+    /*box-sizing:border-box;*/
+    font-family: "Be Vietnam Pro", sans-serif; /*Read about syntax of font family*/
+} 
+
+
+:root{
+    --bgOrange: #e84949;
+}  
+
+#wrapper{
+    height:100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.navbar{
+    display:flex;
+    justify-content: space-between; /*Diff bw justify content, align-items and align-content*/
+    align-items: center;
+}
+
+
+.logocontainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar-content{
+    display:flex;
+    padding-right: 5%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.navbar-content div a{
+    color:black; /*Changes the anchor tag text color to black*/
+}
+
+
+.navbar-content div:hover{   /*Read syntax*/
+    transition: 0.8s; 
+    font-weight: bold;
+}
+
+
+a{
+    text-decoration: none; /*The line under the navbar option text disappears*/
+}
+
+.logo{
+    width:80px;
+}
+
+
+.logo-text{
+    margin-left: -1.2rem;
+    font-size:28px;
+}
+
+
+.navbar-content{
+    gap:2rem;
+}
+
+
+/*.hero-section{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    gap:5rem;
+    margin: 4rem auto;
+    padding:0 1rem;
+    padding-bottom: 8rem;
+}
+
+
+
+.faded-text{
+    position:absolute;
+}
+
+
+
+.hero-section-left{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:left;
+    gap:2rem;
+}
+
+
+
+
+.hero-section-heading{
+    font-size: 35px;
+}
+
+
+
+
+
+
+.hero-section-subheading{
+    font-size: 35px;
+}
+
+
+.hero-section-description{
+    margin-top:1rem;
+}
+*/
+
+
+
+
+
+.hero-section{
+    position:relative;    /*Read when to use relative and when to use absolute*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    gap:5rem;
+    margin: 4rem auto;
+    padding:0 1rem;
+    padding-bottom: 8rem;
+}
+
+
+.faded-text{
+    position:absolute;
+    user-select:none;
+    font-size:7em;
+    color:rgb(231,231,231);
+
+    bottom:-16%;
+    left:-5%;
+    font-weight: bold;
+    transition:all 3s;
+}
+
+
+.hero-section-left{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    /*align-content:flex-start;*/
+    align-items:left;
+    gap:2 rem;
+}
+
+
+
+.hero-section-heading{
+    font-size: 35px;
+    color:#343d68;
+    font-weight: 500;
+}
+
+
+.role{
+    color:#4e45d5;
+    font-weight:800;
+}
+
+
+.hero-section-sub-heading{
+    font-size:45px;
+    line-height:45px;
+}
+
+
+
+.hero-section-description{
+    margin-top:1rem;
+    width:70%;
+    font-weight:500;
+}
+
+
+.btn-pink{
+    background-color:#e84949;
+    padding: 0.8rem 2.3rem;
+    justify-content: center;
+    align-items: center;
+    width:fit-content; /*Adjusts the size*/
+    font-size:18px;
+    font-weight:500; /*Read about font weight*/
+    color:white;
+    box-shadow:5px 5px 7px 0px #0000003f;
+    position: relative;
+    z-index:1;
+    margin-top: 1rem;
+    border: none;
+}
+
+
+.btn-pink::before{
+    content: ""; /*Did not turn black without mentioning content*/
+    background-color: #1f1f1f;
+    position:absolute;
+    top:0; /*To cover the entire div, we make all the dimensions 0*/
+    bottom:0;
+    left:0;
+    right:0;
+    transform: scaleX(0); /*The initial position of the black tint is on the dge of the button*/
+    transform-origin: left; /*Start sliding from the left*/
+    z-index:-1; /*Because we want the text to be visible and only want to change the background color*/
+    transition:all 0.8s;
+}
+
+
+.btn-pink:hover::before{ /*Does not work unless ::before is added*/
+    transform: scaleX(1);
+}
+
+
+
+.hero-section-right{
+    position:relative;
+}
+
+
+.absolute{
+    position:absolute;
+}
+
+
+.user-image{
+    padding: 2.5rem; /*Padding cannot be applied to images. Only div*/
+    transition: all 1s;
+    animation: scale-image 5s linear infinite; /*Read syntax of animation*/
+    z-index:-9;
+}
+
+
+@keyframes scale-image {
+
+    0%{                                /* 0% of the duration of animation */
+        transform:scale(1);
+        filter:grayscale(1);
+    }
+
+    50%{                                /* 50% of the duration of animation */
+        transform:scale(1.2);
+        filter:grayscale(0);
+        box-shadow: 3px 3px 10px black;    /*Syntax for box-shadow*/
+    }
+
+    100%{                                /* 100% of the duration of animation */
+        transform:scale(1);
+        filter:grayscale(1);
+    }
+}
+
+
+
+.icon-dots{
+    z-index:9;
+    left:300px;
+    top:400px;
+    animation: up-down 5s linear infinite; 
+}
+
+
+@keyframes up-down{
+
+    0%{
+        transform:translateY(0px);
+    }
+    
+    50%{
+        transform:translateY(-15px);  /*Read all the units that can be used*/
+    } 
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+
+.icon-cube{
+    z-index:9;
+    left:355px;
+    animation:cube-rotate 3s linear infinite;         /*Diff between linear and ease-in*/
+    transition: all 0.8s;                            /*Read syntax*/
+}
+
+
+@keyframes cube-rotate{
+    0%{
+        transform:translateY(0px);
+    }
+    
+    50%{
+        transform:translateY(-15px) rotateY(180deg);
+    }
+
+    100%{
+        transform:translateY(0px) rotateY(360deg);
+    }
+}
+
+
+.icon-zigzag{
+    z-index:9;
+    top:10px;
+    animation: side 5s linear infinite;
+}
+
+
+@keyframes side{
+    0%{
+        transform:translateX(0px);
+    }
+
+    50%{
+        transform:translateX(30px);
+    }
+
+    100%{
+        transform:translateX(0px);
+    }
+}
+
+
+.icon-circle{
+    z-index:9;
+    left:0;
+    bottom:0;
+    animation:cross 6s ease-in infinite;
+}
+
+
+@keyframes cross{            /*Note down syntaz for up down and cross patterns*/
+    50%{
+        left:5%;
+        bottom:10%;
+    }  
+}
+
+
+.icon-plus{
+    z-index:9;
+    top:-0.8rem;
+    left:50%;
+    animation:shakeEffectPlus 5s ease-in infinite;
+}
+
+
+
+@keyframes shakeEffectPlus{
+    50%{
+        top:3%;
+        left:48%;
+    }
+}
+
+
+
+.project-section{
+    background-color: rgb(231,231,231);
+    margin-top:4rem;
+    left:-1;
+}
+
+
+.project-container{
+    max-width:1200px;
+    margin:0 auto;  /*Syntax*/
+    padding:3rem 0;
+
+    display:flex;
+    flex-direction: column;
+    gap:120px; /*Creates gap between divs. why margin or padding is not used*/
+}
+
+.project-card{
+    width:90%;   /*90% of project-container*/
+    height:550px;
+    background-image: url(./images/projects/Project1.png);
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+}
+
+.project-header{
+    /*justify-content: center; 
+    align-items: center;
+    align-content: center;*/
+    color: var(--bgOrange);
+    font-size:90px;
+    text-align: center; /*Note syntax and why justify, items and content doesn't work*/
+    padding:30px;
+}
+
+.project-content{
+    display:flex;
+    flex-direction:column;
+    position: absolute;
+    color: white;
+    padding:2em; 
+    bottom:20%;
+    gap:1em;
+    z-index:2;
+    transition: all 0.4s;
+}
+
+
+.project-skill{
+    width:40px;
+}
+
+
+
+.project-skill-container{
+    width:60%;
+    gap:10px;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+
+.project-content-left{
+    left:10%;
+}
+
+
+.project-content-right{
+    right:10%;
+}
+
+
+.project-heading{
+    font-size:50px;
+    font-weight: bold;
+    line-height: 3rem; /*Note syntax*/
+}
+
+
+.project-subHeading{
+    width:70%;
+    font-size:16px;
+    font-style:italic; /*Syntax*/
+}
+
+
+.icon{
+    font-size:35px; /*width and height did not work. Why*/
+    color: white;
+}
+
+
+#project1{
+    background-image: url(./images/projects/Project1.png);
+}
+
+#project2{
+    background-image: url(./images/projects/Project2.png);
+    margin-left: 120px;
+}
+
+#project3{
+    background-image: url(./images/projects/Project3.png);
+}
+
+#project4{
+    background-image: url(./images/projects/Project4.png);
+    margin-left: 120px;
+}
+
+
+.project-card::after{
+    content:"";
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f9a;
+    z-index:0;
+}
+
+
+.project-card::before{  /*Why is this code not included in the project-card block itself? - Beacuse if scalex = 0, whole card disappears*/
+    content:"";
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+    transform:scaleX(0);
+    transform-origin: left; /*Read syntax*/
+    transition: all 0.4s;
+    z-index:1;
+}
+
+
+.project-card:hover::before{  /*Why not ::after*/
+    transform:scaleX(1);
+}
+
+.project-card:hover .project-content{
+    transform: scale(1.1);
+}
+
+
+.btn-group{
+    display: flex;
+    gap:0.9rem;
+    align-items:center;
+}
+
+
+.project-number{
+    position: absolute;
+    color:white;
+    font-size:200px;
+    font-weight:600;
+    opacity:0;
+    z-index:3;
+}
+
+
+.project-card:hover .project-number{
+    opacity:1;
+}
+
+
+.project-number-right{
+    right:-40px;
+    top:-45px;
+}
+
+
+.project-number-left{
+    left:-40px; 
+    top:-45px;
+}
+
+
+.skills-container{
+    position: relative; /*The parent div's position is always relative*/
+    display:flex;
+    padding:5rem;
+    margin:10rem auto;
+    gap:30px;
+}
+
+
+.skills-container-left{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+}
+
+
+.skills-container-left h2{
+    color:var(--bgOrange);
+    font-size:50px;
+    font-style:bold;
+    color:var(--bgOrange);
+    line-height:50px;
+}
+
+.capital{
+    font-size:90px;
+}
+
+.skill-subHeading{
+    margin-top:1rem;
+    width:85%;
+    text-align:justify;
+}
+
+
+.skill-container-right{
+    width:50%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap:2rem;
+    justify-content: center;
+}
+
+
+.skills-logo{
+    width:90px;
+    z-index:1;
+    transition: all 0.5s;
+}
+
+
+.skills-logo:hover{
+    transform:scale(1.2);
+}
+
+
+.blob-style{
+    z-index:-1;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%); /*Refer chatgpt*/
+    animation: blob 3s linear infinite;
+}
+
+
+@keyframes blob {   /*Why 50%*/
+    50%{
+        top:54%;
+        left:56%;
+    }
+}
+
+
+.skills-faded-text{
+    position:absolute;
+    font-size:15em;
+    font-style:bold;
+    color:rgb(231,231,231);
+    bottom:-34.5%;
+    right:-25%;
+    user-select:none;
+    overflow-y:hidden;
+}
+
+
+
+.contactus-form-container{
+    width:100%;
+    background-color:rgb(231,231,231);
+}
+
+
+.contactus-heading{
+    font-size:5em;
+    color:var(--bgOrange);
+    padding-top: 2rem;
+}
+
+
+.contactus-sub-heading{
+    font-size:3rem;
+    color:#343d68aa;
+    text-transform: capitalize; /*Read syntax*/
+}
+
+
+.contactus-form-container{
+    margin-top: 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.form{
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    width:70%;
+    margin: 2rem 5rem;
+}
+
+
+.formfield-container{
+    width:100%;
+}
+
+
+.formfield{
+    width:100%;
+    height:42px;
+    padding: 0 2rem;
+    font-size:18px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #1f1f1f;
+    font-weight:500;
+    border:none; /*To make the black border disappear*/
+    margin-top:27px;
+}
+
+.formfield-textarea{
+    height:auto;
+    padding-top:1rem; /*If there is space between 1 and rem, it dooesn't work*/
+}
+
+
+#submit-btn{
+    border:none;
+    font-size:1.4rem;
+    margin: 1rem 0;
+}
+
+
+#submit-btn:hover{
+    scale:0.9; /*Diff bw scale and transfrom:scale()*/
+}
+
+
+.submit-icon{
+    padding:0 1rem;
+    font-size:1.5rem;
+}
+
+footer{
+    position:relative;
+    margin-top:-1px; /*Why negative margin*/
+    background-color:#343d68;
+    padding:5rem;
+}
+
+
+.footer-wrapper{
+    display:flex;
+    gap:1rem;
+    padding:1.2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.footer-faded-text{
+    position:absolute;
+    left:0;
+    bottom:0;
+    color:#535c87;
+    user-select:none; /*WHy*/
+    font-size:5em;
+}
+
+
+.link-wrapper{
+    display:flex;
+    gap:1.2rem;
+}
+
+
+
+.link-wrapper div a{  /*Note syntax*/
+    color:white;
+    text-decoration:none; /*Why*/
+    transition:all 0.6s;
+}
+
+
+.link-wrapper div a:hover{
+    color:var(--bgOrange);
+}
+
+
+.icon-wrapper{
+    display:flex;
+    gap:1rem;
+}
